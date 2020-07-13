@@ -29,14 +29,16 @@ public class CityBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        if (update.getMessage().getText().equals("gen")) {
+        long chatId = update.getMessage().getChatId();
+        String input = update.getMessage().getText();
+        if (input.equals("/generatedata")) {
             dataGenerator.generateData();
+            sendMessage(chatId, "Данные по умолчанию успешно добавлены");
+            return;
         }
         if (!update.hasMessage() || !update.getMessage().hasText() || update.getMessage().isCommand()) {
             return;
         }
-        long chatId = update.getMessage().getChatId();
-        String input = update.getMessage().getText();
         context.collectUserData(chatId);
         sendResponse(chatId, input);
     }

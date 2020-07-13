@@ -3,6 +3,7 @@ package by.gerasimov.bot;
 import by.gerasimov.model.City;
 import by.gerasimov.model.User;
 import by.gerasimov.service.CityService;
+import by.gerasimov.service.CountryService;
 import by.gerasimov.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,8 @@ public class BotService {
     public static final String MESSAGE_NOT_FOUND = "Извините, такой город не найден в нашей базе. Проверьте, скорее всего такого города не существует";
     @Autowired
     private CityService cityService;
+    @Autowired
+    private CountryService countryService;
     @Autowired
     private UserService userService;
 

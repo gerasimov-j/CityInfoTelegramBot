@@ -28,6 +28,12 @@ public class CountryService {
         return countryRepository.save(newCountry);
     }
 
+    public void putByName(Country newCountry) {
+        if (countryRepository.findByName(newCountry.getName()) == null) {
+            countryRepository.save(newCountry);
+        }
+    }
+
     public Country put(Country newCountry, Long id) {
         newCountry.setId(id);
         countryRepository.save(newCountry);

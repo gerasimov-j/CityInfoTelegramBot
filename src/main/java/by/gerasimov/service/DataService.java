@@ -1,5 +1,6 @@
 package by.gerasimov.service;
 
+import by.gerasimov.bot.BotService;
 import by.gerasimov.model.City;
 import by.gerasimov.model.Country;
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class DataService {
                 jsonCountry.getString("name"),
                 jsonCountry.getString("emojiCode")
             );
-            countryService.save(country);
+            countryService.putByName(country);
         }
     }
 
@@ -54,13 +55,11 @@ public class DataService {
                 jsonCity.getString("info"),
                 countryService.findByName(jsonCity.getJSONObject("country").getString("name"))
             );
-            cityService.save(city);
+            cityService.putByName(city);
         }
     }
 
     public void generateData() {
-        cityService.deleteAll();
-        countryService.deleteAll();
         generateCountries();
         generateCities();
     }
