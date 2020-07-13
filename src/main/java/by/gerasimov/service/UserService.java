@@ -1,6 +1,5 @@
 package by.gerasimov.service;
 
-import by.gerasimov.model.Country;
 import by.gerasimov.model.User;
 import by.gerasimov.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

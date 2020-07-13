@@ -15,4 +15,13 @@ public class Country {
     private long id;
     private String name;
     private String emojiCode;
+
+    public Country() {
+
+    }
+
+    public Country(String name, String emojiCode) {
+        this.name = name;
+        this.emojiCode = emojiCode;
+    }
 }

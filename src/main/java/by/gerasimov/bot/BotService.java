@@ -7,10 +7,10 @@ import by.gerasimov.service.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
-@Controller
-public class BotContext {
+@Service
+public class BotService {
 
     public static final String MESSAGE_NOT_INFO = "Про этот город нет ничего интересного";
     public static final String MESSAGE_NOT_FOUND = "Извините, такой город не найден в нашей базе. Проверьте, скорее всего такого города не существует";
@@ -36,7 +36,7 @@ public class BotContext {
         StringBuilder title = new StringBuilder();
         String info = city.getInfo();
         if (info == null || info.trim().equals("")) {
-            info = BotContext.MESSAGE_NOT_INFO;
+            info = BotService.MESSAGE_NOT_INFO;
         }
         title.append(city.getName());
         if (city.getCountry() != null) {

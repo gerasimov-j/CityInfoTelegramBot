@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -24,6 +23,16 @@ public class City {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Country country;
+
+    public City() {
+
+    }
+
+    public City(String name, String info, Country country) {
+        this.name = name;
+        this.info = info;
+        this.country = country;
+    }
 
     public String getCountryName() {
         String name = "";

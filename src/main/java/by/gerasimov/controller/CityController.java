@@ -10,36 +10,38 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("cities")
 public class CityController {
 
     @Autowired
-    private CityService service;
+    private CityService cityService;
 
     @GetMapping
     public List<City> getAll() {
-        return service.findAll();
+        return cityService.findAll();
     }
 
     @PostMapping
     City save(@RequestBody City newCity) {
-        return service.save(newCity);
+        return cityService.save(newCity);
     }
 
     @GetMapping("{id}")
     public City getById(@PathVariable Long id) {
-        return service.findOne(id);
+        return cityService.findOne(id);
     }
 
     @PutMapping("{id}")
     public City put(@RequestBody City newCity, @PathVariable Long id) {
-        return service.put(newCity, id);
+        return cityService.put(newCity, id);
     }
 
     @DeleteMapping("{id}")
     public void deleteById(@PathVariable Long id) {
-        service.deleteById(id);
+        cityService.deleteById(id);
     }
 }

@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("countries")
 public class CountryController {
-    
+
     @Autowired
     private CountryService countryService;
-
 
     @GetMapping
     public List<Country> getAll() {
@@ -29,6 +28,11 @@ public class CountryController {
     @PostMapping
     Country save(@RequestBody Country newCountry) {
         return countryService.save(newCountry);
+    }
+
+    @GetMapping("{id}")
+    public Country getById(@PathVariable Long id) {
+        return countryService.findOne(id);
     }
 
     @PutMapping("{id}")

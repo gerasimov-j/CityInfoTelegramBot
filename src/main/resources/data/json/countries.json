@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Беларусь",
+    "emojiCode": ":by:"
+  },
+  {
+    "id": 2,
+    "name": "Россия",
+    "emojiCode": ":ru:"
+  },
+  {
+    "id": 3,
+    "name": "Украина",
+    "emojiCode": ":ua:"
+  },
+  {
+    "id": 4,
+    "name": "Ватикан",
+    "emojiCode": ":va:"
+  },
+  {
+    "id": 5,
+    "name": "Литва",
+    "emojiCode": ":lt:"
+  },
+  {
+    "id": 6,
+    "name": "Италия",
+    "emojiCode": ":it:"
+  },
+  {
+    "id": 7,
+    "name": "США",
+    "emojiCode": ":us:"
+  },
+  {
+    "id": 8,
+    "name": "Китай",
+    "emojiCode": ":cn:"
+  },
+  {
+    "id": 9,
+    "name": "Австралия",
+    "emojiCode": ":au:"
+  },
+  {
+    "id": 10,
+    "name": "Бразилия",
+    "emojiCode": ":br:"
+  },
+  {
+    "id": 11,
+    "name": "Израиль",
+    "emojiCode": ":il:"
+  },
+  {
+    "id": 12,
+    "name": "Франция",
+    "emojiCode": ":fr:"
+  }
+]

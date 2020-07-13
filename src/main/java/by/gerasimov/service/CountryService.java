@@ -1,6 +1,5 @@
 package by.gerasimov.service;
 
-import by.gerasimov.model.City;
 import by.gerasimov.model.Country;
 import by.gerasimov.repo.CountryRepository;
 import java.util.List;
@@ -17,6 +16,14 @@ public class CountryService {
         return countryRepository.findAll();
     }
 
+    public Country findOne(Long id) {
+        return countryRepository.findById(id).orElseThrow(() -> new RuntimeException("Country by id not found"));
+    }
+
+    public Country findByName(String name) {
+        return countryRepository.findByName(name);
+    }
+
     public Country save(Country newCountry) {
         return countryRepository.save(newCountry);
     }
@@ -29,5 +36,9 @@ public class CountryService {
 
     public void deleteById(Long id) {
         countryRepository.deleteById(id);
+    }
+
+    public void deleteAll() {
+        countryRepository.deleteAll();
     }
 }

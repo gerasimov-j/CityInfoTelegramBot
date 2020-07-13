@@ -37,4 +37,8 @@ public class CityService {
     public void deleteById(Long id) {
         cityRepository.deleteById(id);
     }
+
+    public void deleteAll() {
+        cityRepository.deleteAll();
+    }
 }

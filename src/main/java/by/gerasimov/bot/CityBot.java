@@ -1,5 +1,6 @@
 package by.gerasimov.bot;
 
+import by.gerasimov.service.DataService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,10 +22,16 @@ public class CityBot extends TelegramLongPollingBot {
     private String botToken;
 
     @Autowired
-    private BotContext context;
+    private BotService context;
+
+    @Autowired
+    private DataService dataGenerator;
 
     @Override
     public void onUpdateReceived(Update update) {
+        if (update.getMessage().getText().equals("gen")) {
+            dataGenerator.generateData();
+        }
         if (!update.hasMessage() || !update.getMessage().hasText() || update.getMessage().isCommand()) {
             return;
         }
