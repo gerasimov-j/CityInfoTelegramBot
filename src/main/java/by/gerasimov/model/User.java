@@ -2,6 +2,7 @@ package by.gerasimov.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import lombok.Data;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Long chatId;
     private int queryCount;

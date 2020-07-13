@@ -19,7 +19,7 @@ public class BotContext {
     @Autowired
     private UserService userService;
 
-    public List<String> getInfoListByCityName(String cityName) {
+    List<String> getInfoListByCityName(String cityName) {
         List<City> cities = cityService.findAllByName(cityName);
         List<String> infos = new ArrayList<>();
         if (cities.isEmpty()) {
@@ -38,7 +38,10 @@ public class BotContext {
         if (info == null || info.trim().equals("")) {
             info = BotContext.MESSAGE_NOT_INFO;
         }
-        title.append(city.getName()).append(", ").append(city.getCountryName()).append(city.getCountryEmojiCode());
+        title.append(city.getName());
+        if (city.getCountry() != null) {
+            title.append(", ").append(city.getCountryName()).append(city.getCountryEmoji());
+        }
         return toFormatMessage(title.toString(), info);
     }
 

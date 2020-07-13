@@ -29,9 +29,13 @@ public class CityBot extends TelegramLongPollingBot {
             return;
         }
         long chatId = update.getMessage().getChatId();
-        context.collectUserData(chatId);
         String input = update.getMessage().getText();
-        List<String> infos = context.getInfoListByCityName(input);
+        context.collectUserData(chatId);
+        sendResponse(chatId, input);
+    }
+
+    private void sendResponse(long chatId, String cityName) {
+        List<String> infos = context.getInfoListByCityName(cityName);
         for (String info : infos) {
             sendMessage(chatId, info);
         }
