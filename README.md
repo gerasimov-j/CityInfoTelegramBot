@@ -12,4 +12,4 @@ https://city-info-telegram-bot.herokuapp.com/
 
 *В папке **resources/data/json** файлы json с данными из БД.*
 
-*В папке **resources/data/mysql** есть скрипты заполнения таблиц в MySQL на случай подключения своей СУБД.*
+*В папке **resources/data/mysql** есть скрипты заполнения таблиц в MySQL.*
